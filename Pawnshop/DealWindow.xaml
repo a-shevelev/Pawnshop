@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pawnshop"
         mc:Ignorable="d"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" d:DataContext="{d:DesignInstance Type=local:Category}"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
         Title="DealWindow" Height="600" Width="600">
     <Grid Background="#D0F0C0" >
         <Border MinWidth="300" Margin="10" Background="AliceBlue" VerticalAlignment="Center" MaxWidth="550" Padding="25" CornerRadius="17" Cursor="IBeam" >
@@ -21,31 +21,34 @@
                     <TextBlock Text="Информация о товаре" FontSize="20" Margin="3 3 3 6" FontFamily="GOST type B" HorizontalAlignment="Right" ></TextBlock>
                 </Grid>
                 <Grid Margin="3 3 3 6">
-                    <ComboBox Name="ComboBoxCustomer" materialDesign:HintAssist.Hint="Ф.И.О и паспортные данные клиента" HorizontalAlignment="Left"  VerticalAlignment="Bottom"  Width="250" IsEditable="True"  Background="#00000000"></ComboBox>
-                    <ComboBox Name="ComboBoxCategory" materialDesign:HintAssist.Hint="Категория товара" HorizontalAlignment="Right"  VerticalAlignment="Bottom"  Width="150" IsEditable="True"  Background="#00000000"></ComboBox>
+                    <ComboBox Name="ComboBoxCustomer" materialDesign:HintAssist.Hint="Ф.И.О и паспортные данные клиента" HorizontalAlignment="Left"  FontSize="11" VerticalAlignment="Bottom"  Width="250" IsEnabled="True" IsReadOnly="True" IsEditable="True" Background="#00000000"  SelectionChanged="ComboBoxSelectionChanged"></ComboBox>
+                    <ComboBox Name="ComboBoxCategory" materialDesign:HintAssist.Hint="Категория товара" HorizontalAlignment="Right"  VerticalAlignment="Bottom"  Width="150" IsEditable="True" IsReadOnly="True" SelectionChanged="ComboBoxCategorySelectionChanged" Background="#00000000"></ComboBox>
                 </Grid>
                 <Grid Margin="3 3 3 6">
                     <Button HorizontalAlignment="Left" Height="30" Width="250" Content="Добавить нового клиента" FontSize="15" FontFamily="GOST type B" Style="{StaticResource MaterialDesignPaperLightButton}" Foreground="Black" BorderBrush="#FFB5BD1D" Cursor="Hand" Click="ButtonClickAddNewCustomer" />
-                    <ComboBox Name="ComboBoxProducer" materialDesign:HintAssist.Hint="Производитель" HorizontalAlignment="Right"  VerticalAlignment="Bottom"  Width="120"  IsEditable="True" Background="#00000000"></ComboBox>
+                    <ComboBox Name="ComboBoxProducer" materialDesign:HintAssist.Hint="Производитель" HorizontalAlignment="Right"  VerticalAlignment="Bottom"  Width="120"  IsEditable="True" IsReadOnly="True"  SelectionChanged="ComboBoxProducerSelectionChanged" Background="#00000000"></ComboBox>
                 </Grid>
                 <Grid Margin="3 3 3 6">
-                    <DatePicker materialDesign:HintAssist.Hint="Дата сделки" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" materialDesign:HintAssist.Foreground="Black" HorizontalAlignment="Left" Width="150" />
-                    <ComboBox Name="ComboBoxModel" materialDesign:HintAssist.Hint="Модель" HorizontalAlignment="Right"  VerticalAlignment="Bottom"  Width="120"  IsEditable="True" Background="#00000000"></ComboBox>
+                    <DatePicker Name="Date1" materialDesign:HintAssist.Hint="Дата сделки"  Style="{StaticResource MaterialDesignFloatingHintDatePicker}" materialDesign:HintAssist.Foreground="Black" HorizontalAlignment="Left" Width="150" />
+                    <ComboBox Name="ComboBoxModel" materialDesign:HintAssist.Hint="Модель" SelectionChanged="ComboBoxSelectionChanged" HorizontalAlignment="Right"  VerticalAlignment="Bottom"  Width="120"  IsEditable="True" IsReadOnly="True" Background="#00000000"></ComboBox>
                 </Grid>
                 <Grid Margin="3 3 3 6">
-                    <DatePicker materialDesign:HintAssist.Hint="Дата возврата" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" materialDesign:HintAssist.Foreground="Black" HorizontalAlignment="Left" Width="150" />
-                    <TextBox  materialDesign:HintAssist.Hint="Год выпуска товара" materialDesign:HintAssist.Foreground="Black" HorizontalAlignment="Right" Style="{StaticResource MaterialDesignFloatingHintTextBox}" MaxLength="4" Cursor="IBeam"/>
+                    <DatePicker Name="DateReturn" materialDesign:HintAssist.Hint="Дата возврата" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" materialDesign:HintAssist.Foreground="Black" HorizontalAlignment="Left" Width="150" SelectedDateChanged="DateSelectionChanged"/>
+                    <TextBox Name="YearOfProduction"  PreviewTextInput="TextBoxPreviewDigitInput" PreviewKeyDown="TextBox_PreviewKeyDown" materialDesign:HintAssist.Hint="Год выпуска товара" materialDesign:HintAssist.Foreground="Black" HorizontalAlignment="Left" Style="{StaticResource MaterialDesignFloatingHintTextBox}" MaxLength="4" Cursor="IBeam" TextChanged="TextBoxTextChanged" Margin="383,0,0,0"/>
                 </Grid>
                 <Grid Margin="3 3 3 6">
+                    <TextBox Name="PriceProduct" PreviewTextInput="TextBoxPreviewDigitInput" PreviewKeyDown="TextBox_PreviewKeyDown" materialDesign:HintAssist.Hint="Цена" materialDesign:HintAssist.Foreground="Black" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="IBeam" TextChanged="TextBoxTextChanged" Margin="394,1,20,0"  Width="80" />
+                    <TextBlock Name="RUB" HorizontalAlignment="Right" FontFamily="GOST type B" Margin="0,18,0,-18" >руб.</TextBlock>
 
                 </Grid>
                 <Grid Margin="5 5 5 5">
-                    <Button HorizontalAlignment="Center" Height="30" Width="200" Content="Заключить договор" FontSize="15" FontFamily="GOST type B" Style="{StaticResource MaterialDesignPaperLightButton}" Foreground="Black" BorderBrush="#FFB5BD1D" Cursor="Hand" />
+                    <Button  Height="30" Width="200" Content="Вернуться в меню" FontSize="15" FontFamily="GOST type B" Style="{StaticResource MaterialDesignPaperLightButton}" Foreground="Black" BorderBrush="#FFB5BD1D" Cursor="Hand" Click="ButtonClickReturnToMenu" Margin="0,0,290,0"  />
+                    <Button HorizontalAlignment="Left" Height="30" Width="200" Content="Заключить договор" FontSize="15" FontFamily="GOST type B" Style="{StaticResource MaterialDesignPaperLightButton}" Foreground="Black" BorderBrush="#FFB5BD1D" Cursor="Hand" Click="ButtonClickMakeNewDeal" Margin="290,0,0,0"  />
                 </Grid>
-                
+
             </StackPanel>
         </Border>
-        
+
 
     </Grid>
 </Window>

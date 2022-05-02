@@ -27,11 +27,16 @@ namespace Pawnshop
         {
             DealWindow dealWindow = new DealWindow();
             dealWindow.Show();
-            Hide();
+            Close();
         }
 
         private void ButtonClickShowProducts(object sender, RoutedEventArgs e)
         {
+           ShowProducts showProducts = new ShowProducts();
+            showProducts.Show();
+            Close();
+
+            
 
         }
     }

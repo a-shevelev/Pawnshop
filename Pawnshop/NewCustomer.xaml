@@ -17,27 +17,27 @@
                 <TextBlock Text="Добавление клиента" FontSize="30" Margin="5 5 5 10" FontWeight="Bold" FontFamily="GOST type B" HorizontalAlignment="Center">
                 </TextBlock>
                 <Grid Margin="3 3 3 6">
-                    <TextBox x:Name="TextBoxFirstName"  materialDesign:HintAssist.Hint="Фамилия" materialDesign:HintAssist.Foreground="Black" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFloatingHintTextBox}" MaxLength="15" Cursor="IBeam" Width="150" CaretBrush="#FF3AB74B" SelectionBrush="#FF9DDBAA" />
+                    <TextBox x:Name="TextBoxFirstName"  PreviewTextInput="TextBox_PreviewTextInput" PreviewKeyDown="TextBox_PreviewKeyDown"  materialDesign:HintAssist.Hint="Фамилия" materialDesign:HintAssist.Foreground="Black" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFloatingHintTextBox}" MaxLength="15" Cursor="IBeam" Width="150" CaretBrush="#FF3AB74B" SelectionBrush="#FF9DDBAA" TextChanged="TextBoxTextChanged"/>
                    
                 </Grid>
                 <Grid Margin="3 3 3 6">
-                    <TextBox x:Name="TextBoxSecondName" materialDesign:HintAssist.Hint="Имя" materialDesign:HintAssist.Foreground="Black" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFloatingHintTextBox}" MaxLength="15" Cursor="IBeam" Width="150" CaretBrush="#FF3AB74B" SelectionBrush="#FF9DDBAA" />
+                    <TextBox x:Name="TextBoxSecondName" PreviewTextInput="TextBox_PreviewTextInput" PreviewKeyDown="TextBox_PreviewKeyDown" materialDesign:HintAssist.Hint="Имя" materialDesign:HintAssist.Foreground="Black" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFloatingHintTextBox}" MaxLength="15" Cursor="IBeam" Width="150" CaretBrush="#FF3AB74B" SelectionBrush="#FF9DDBAA" TextChanged="TextBoxTextChanged"/>
                     
                 </Grid>
                 <Grid Margin="3 3 3 6">
-                    <TextBox x:Name="TextBoxPatronymic" materialDesign:HintAssist.Hint="Отчество" materialDesign:HintAssist.Foreground="Black" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFloatingHintTextBox}" MaxLength="15" Cursor="IBeam" Width="150" CaretBrush="#FF3AB74B" SelectionBrush="#FF9DDBAA" />
+                    <TextBox x:Name="TextBoxPatronymic" PreviewTextInput="TextBox_PreviewTextInput" PreviewKeyDown="TextBox_PreviewKeyDown" materialDesign:HintAssist.Hint="Отчество" materialDesign:HintAssist.Foreground="Black" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFloatingHintTextBox}" MaxLength="15" Cursor="IBeam" Width="150" CaretBrush="#FF3AB74B" SelectionBrush="#FF9DDBAA" TextChanged="TextBoxTextChanged"/>
                     
                 </Grid>
                 <Grid Margin="3 3 3 6">
-                    <TextBox x:Name="TextBoxPassport" materialDesign:HintAssist.Hint="Паспортные данные" materialDesign:HintAssist.Foreground="Black"  HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFloatingHintTextBox}" MaxLength="10" Cursor="IBeam" Width="150" CaretBrush="#FF3AB74B" SelectionBrush="#FF9DDBAA" />
+                    <TextBox x:Name="TextBoxPassport" PreviewTextInput="TextBoxPreviewDigitInput" PreviewKeyDown="TextBox_PreviewKeyDown" materialDesign:HintAssist.Hint="Паспортные данные" materialDesign:HintAssist.Foreground="Black"  HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFloatingHintTextBox}" MaxLength="10" Cursor="IBeam" Width="150" CaretBrush="#FF3AB74B" SelectionBrush="#FF9DDBAA" TextChanged="TextBoxTextChanged"/>
                     
                 </Grid>
                 <Grid Margin="3 3 3 30">
-                    <TextBox  x:Name="TextBoxPhoneNumber" materialDesign:HintAssist.Hint="Номер телефона" materialDesign:HintAssist.Foreground="Black" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFloatingHintTextBox}" MaxLength="12"  Text="+7" Cursor="IBeam" Width="150" CaretBrush="#FF3AB74B" SelectionBrush="#FF9DDBAA" />
+                    <TextBox  x:Name="TextBoxPhoneNumber" PreviewTextInput="TextBoxPreviewDigitInput" PreviewKeyDown="TextBox_PreviewKeyDown" materialDesign:HintAssist.Hint="Номер телефона" materialDesign:HintAssist.Foreground="Black" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFloatingHintTextBox}" MaxLength="12"  Text="+7" Cursor="IBeam" Width="150" CaretBrush="#FF3AB74B" SelectionBrush="#FF9DDBAA" TextChanged="TextBoxTextChanged"/>
                     
                 </Grid>
                 <Grid Margin="5 5 5 5">
-                    <Button HorizontalAlignment="Center" Height="30" Width="200" Content="Заключить договор" FontSize="15" FontFamily="GOST type B" Style="{StaticResource MaterialDesignPaperLightButton}" Foreground="Black" BorderBrush="#FFB5BD1D" Cursor="Hand" Click="ClickAddNewCustomer"/>
+                    <Button HorizontalAlignment="Center" Height="30" Width="200" Content="Добавить клиента" FontSize="15" FontFamily="GOST type B" Style="{StaticResource MaterialDesignPaperLightButton}" Foreground="Black" BorderBrush="#FFB5BD1D" Cursor="Hand" Click="ClickAddNewCustomer"/>
                 </Grid>
 
             </StackPanel>

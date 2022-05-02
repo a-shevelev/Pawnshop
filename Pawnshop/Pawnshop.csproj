@@ -80,6 +80,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DealInfo.xaml.cs">
+      <DependentUpon>DealInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShowProducts.xaml.cs">
+      <DependentUpon>ShowProducts.xaml</DependentUpon>
+    </Compile>
     <Page Include="DealWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -92,7 +98,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ApplicationContext.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="DealWindow.xaml.cs">
       <DependentUpon>DealWindow.xaml</DependentUpon>
@@ -102,6 +107,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="NewCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DealInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShowProducts.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
