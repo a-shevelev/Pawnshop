@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pawnshop"
         mc:Ignorable="d"
-        Title="ShowProducts" Height="450" Width="850">
+        Title="ShowProducts" WindowStartupLocation="CenterScreen" Height="600" Width="850">
     <Grid Background="#D0F0C0" >
-        <Border MinWidth="300" Margin="10" Background="AliceBlue" VerticalAlignment="Center" MaxWidth="650" Padding="25" CornerRadius="17" >
+        <Border MinWidth="300" Margin="10" Background="AliceBlue" VerticalAlignment="Center" MaxWidth="700" Padding="25" CornerRadius="17" >
             <Border.Effect>
                 <DropShadowEffect BlurRadius="10" Color="PaleGoldenrod" ShadowDepth="0">
                 </DropShadowEffect>
@@ -17,29 +17,31 @@
                 </TextBlock>
                 
                 <Grid Margin="5 5 5 5"  >
-                   
-                   
-                    <DataGrid Name="Wares" AutoGenerateColumns="False" MaxWidth="650" MinWidth="400" IsReadOnly="True">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="№ товара"  Binding="{Binding Id}"/>
-                            <DataGridTextColumn Header="Категория" Binding="{Binding Category}" />
-                            <DataGridTextColumn Header="Производитель" Binding="{Binding Producer}" />
-                            <DataGridTextColumn Header="Модель" Binding="{Binding Model}" />
-                            <DataGridTextColumn Header="Год" Binding="{Binding Year}" />
-                            <DataGridTextColumn Header="Цена" Binding="{Binding Price}" />
 
-                            
+                    
+                        <DataGrid Name="Wares" AutoGenerateColumns="False" MaxWidth="700" MinWidth="400" MaxHeight="350" IsReadOnly="True">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="№ товара"  Binding="{Binding Id}"/>
+                                <DataGridTextColumn Header="Категория" Binding="{Binding Category}" />
+                                <DataGridTextColumn Header="Производитель" Binding="{Binding Producer}" />
+                                <DataGridTextColumn Header="Модель" Binding="{Binding Model}" />
+                                <DataGridTextColumn Header="Год" Binding="{Binding Year}" />
+                                <DataGridTextColumn Header="Цена" Binding="{Binding Price}" />
 
-                        </DataGrid.Columns>
-                    </DataGrid>
 
+
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    
 
 
 
                 </Grid>
+                <Grid Margin="5 20 5 5">
+                    <Button HorizontalAlignment="Center" Height="30" Width="200" Content="Вернуться в меню" FontSize="15" FontFamily="GOST type B" Style="{StaticResource MaterialDesignPaperLightButton}" Foreground="Black" BorderBrush="#FFB5BD1D" Cursor="Hand" Click="ButtonClickReturnToMenu" />
+                </Grid>
 
-                
-                
+
             </StackPanel>
         </Border>
     </Grid>

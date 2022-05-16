@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Pawnshop"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
-        Title="DealWindow" Height="600" Width="600">
+        Title="DealWindow" WindowStartupLocation="CenterScreen" Height="600" Width="600">
     <Grid Background="#D0F0C0" >
         <Border MinWidth="300" Margin="10" Background="AliceBlue" VerticalAlignment="Center" MaxWidth="550" Padding="25" CornerRadius="17" Cursor="IBeam" >
             <Border.Effect>
@@ -21,7 +21,7 @@
                     <TextBlock Text="Информация о товаре" FontSize="20" Margin="3 3 3 6" FontFamily="GOST type B" HorizontalAlignment="Right" ></TextBlock>
                 </Grid>
                 <Grid Margin="3 3 3 6">
-                    <ComboBox Name="ComboBoxCustomer" materialDesign:HintAssist.Hint="Ф.И.О и паспортные данные клиента" HorizontalAlignment="Left"  FontSize="11" VerticalAlignment="Bottom"  Width="250" IsEnabled="True" IsReadOnly="True" IsEditable="True" Background="#00000000"  SelectionChanged="ComboBoxSelectionChanged"></ComboBox>
+                    <ComboBox Name="ComboBoxCustomer" materialDesign:HintAssist.Hint="Ф.И.О и паспортные данные клиента" HorizontalAlignment="Left"  FontSize="11" VerticalAlignment="Bottom"  Width="250" IsEnabled="True" IsReadOnly="True" IsEditable="True" Background="#00000000"  SelectionChanged="ComboBoxSelectionChanged" DropDownOpened="CustomerOnDropDownOpened"></ComboBox>
                     <ComboBox Name="ComboBoxCategory" materialDesign:HintAssist.Hint="Категория товара" HorizontalAlignment="Right"  VerticalAlignment="Bottom"  Width="150" IsEditable="True" IsReadOnly="True" SelectionChanged="ComboBoxCategorySelectionChanged" Background="#00000000"></ComboBox>
                 </Grid>
                 <Grid Margin="3 3 3 6">
@@ -43,7 +43,7 @@
                 </Grid>
                 <Grid Margin="5 5 5 5">
                     <Button  Height="30" Width="200" Content="Вернуться в меню" FontSize="15" FontFamily="GOST type B" Style="{StaticResource MaterialDesignPaperLightButton}" Foreground="Black" BorderBrush="#FFB5BD1D" Cursor="Hand" Click="ButtonClickReturnToMenu" Margin="0,0,290,0"  />
-                    <Button HorizontalAlignment="Left" Height="30" Width="200" Content="Заключить договор" FontSize="15" FontFamily="GOST type B" Style="{StaticResource MaterialDesignPaperLightButton}" Foreground="Black" BorderBrush="#FFB5BD1D" Cursor="Hand" Click="ButtonClickMakeNewDeal" Margin="290,0,0,0"  />
+                    <Button Height="30" Width="200" Content="Заключить договор" FontSize="15" FontFamily="GOST type B" Style="{StaticResource MaterialDesignPaperLightButton}" Foreground="Black" BorderBrush="#FFB5BD1D" Cursor="Hand" Click="ButtonClickMakeNewDeal" Margin="290,0,0,0"  />
                 </Grid>
 
             </StackPanel>

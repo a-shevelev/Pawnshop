@@ -24,6 +24,7 @@ namespace Pawnshop
         //public Customer customer { get; set; }
         
         string pathCustomers = @"../users.txt";
+        int countDefis = 0;
         public NewCustomer()
         {
             InitializeComponent();
@@ -31,10 +32,11 @@ namespace Pawnshop
         
         private void ClickAddNewCustomer(object sender, RoutedEventArgs e)
         {
-
+            
             Customer customer = new Customer();
             TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
             bool Valid;
+            bool firstCustomer = false;
             bool CustomExist = true;
             customer.FirstName = textInfo.ToTitleCase(TextBoxFirstName.Text.ToLower());
             customer.SecondName = textInfo.ToTitleCase(TextBoxSecondName.Text.ToLower());
@@ -48,6 +50,10 @@ namespace Pawnshop
                     {
                     string[] users;
                         string dataUsers = reader.ReadToEnd();
+                    if (string.IsNullOrEmpty(dataUsers))
+                    {
+                        firstCustomer = true;
+                    }
                         users = dataUsers.Split('/');
                     for (int i = 0; i < users.Length; i++)
                     {
@@ -68,7 +74,14 @@ namespace Pawnshop
                 {
                     using (StreamWriter stream = new StreamWriter(pathCustomers, true, Encoding.GetEncoding(1251)))
                     {
-                        stream.Write($"/{customer.FirstName} {customer.SecondName} {customer.Patronymic} {customer.Passport} {customer.PhoneNumber}");
+                        if (firstCustomer)
+                        {
+                            stream.Write($"{customer.FirstName} {customer.SecondName} {customer.Patronymic} {customer.Passport} {customer.PhoneNumber}");
+                        }
+                        else
+                        {
+                            stream.Write($"/{customer.FirstName} {customer.SecondName} {customer.Patronymic} {customer.Passport} {customer.PhoneNumber}");
+                        }
                         MessageBox.Show("Клиент успешно добавлен");
                     }
                 }
@@ -107,6 +120,11 @@ namespace Pawnshop
                 return true;
             if (c >= 'а' && c <= 'я')
                 return true;
+            if (c == '-' && countDefis == 0)
+            {
+                countDefis++;
+                return true;
+            }
             return false;
         }
         private void MarkInvalid(Control control)
@@ -133,5 +151,6 @@ namespace Pawnshop
                 return true;
             } 
         }
+        
     }
 }

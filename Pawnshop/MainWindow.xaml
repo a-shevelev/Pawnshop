@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pawnshop"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="600">
+        Title="MainWindow" Height="600" WindowStartupLocation="CenterScreen" Width="600">
     <Grid Background="#D0F0C0">
+        
         <Border MinWidth="300" Margin="10" Background="AliceBlue" VerticalAlignment="Center" MaxWidth="550" Padding="25" CornerRadius="17" >
             <Border.Effect>
                 <DropShadowEffect BlurRadius="10" Color="PaleGoldenrod" ShadowDepth="0">
@@ -16,11 +17,14 @@
                 <TextBlock Text="МЕНЮ" FontSize="80" Margin="5 5 5 10" FontWeight="Bold" FontFamily="GOST type B" HorizontalAlignment="Center">
                 </TextBlock>
                 <Grid Margin="5 5 5 25"  >
-                    <Button HorizontalAlignment="Center" Height="60" Width="400" Content="Составить договор" FontSize="40" FontFamily="GOST type B" Style="{StaticResource MaterialDesignPaperLightButton }" Foreground="Black" BorderBrush="#FFB5BD1D" Cursor="Hand" Click="ButtonClickCreateDeal" >
+                    <Button HorizontalAlignment="Center" Height="60" Width="430" Content="Составить договор" FontSize="40" FontFamily="GOST type B" Style="{StaticResource MaterialDesignPaperLightButton }" Foreground="Black" BorderBrush="#FFB5BD1D" Cursor="Hand" Click="ButtonClickCreateDeal" >
                     </Button>
                 </Grid>
+                <Grid Margin="5 5 5 25">
+                    <Button HorizontalAlignment="Center" Height="60" Width="430" Content="Просмотреть товары" FontSize="40" FontFamily="GOST type B" Style="{StaticResource MaterialDesignPaperLightButton}" Foreground="Black" BorderBrush="#FFB5BD1D" Cursor="Hand" Click="ButtonClickShowProducts"/>
+                </Grid>
                 <Grid Margin="5 5 5 5">
-                    <Button HorizontalAlignment="Center" Height="60" Width="400" Content="Просмотреть товары" FontSize="40" FontFamily="GOST type B" Style="{StaticResource MaterialDesignPaperLightButton}" Foreground="Black" BorderBrush="#FFB5BD1D" Cursor="Hand" Click="ButtonClickShowProducts"/>
+                    <Button HorizontalAlignment="Center" Height="60" Width="430" Content="Просмотреть договоры" FontSize="40" FontFamily="GOST type B" Style="{StaticResource MaterialDesignPaperLightButton}" Foreground="Black" BorderBrush="#FFB5BD1D" Cursor="Hand" Click="ButtonClickShowDeals"/>
                 </Grid>
             </StackPanel>
         </Border>

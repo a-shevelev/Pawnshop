@@ -35,9 +35,12 @@ namespace Pawnshop
            ShowProducts showProducts = new ShowProducts();
             showProducts.Show();
             Close();
-
-            
-
+        }
+        private void ButtonClickShowDeals(object sender, RoutedEventArgs e)
+        {
+            ShowDeals showDeals = new ShowDeals();
+            showDeals.Show();
+            Close();
         }
     }
 }

@@ -41,18 +41,17 @@ namespace Pawnshop
             Wares.ItemsSource = products;
 
         }
-    }
-    
-    public class Product
-    {
-        public double Id { get; set; }
+        private void ButtonClickReturnToMenu(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            Close();
 
-        public string Category { get; set; }
-        public string Producer { get; set; }
-        public string Model { get; set; }
-        public string Year { get; set; }
-        public string Price { get; set; }
+        }
+
 
     }
+
+   
     
 }

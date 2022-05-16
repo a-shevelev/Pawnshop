@@ -27,10 +27,12 @@ namespace Pawnshop
         public string[][][] models;
         public string[] users;
         int index = 0;
+        bool CustomerEmpty = false;
 
         string pathCustomers = @"../users.txt";
         string pathDeals = @"../deals.txt";
         string pathProducts = @"../products.txt";
+        string pathPawnShop = @"../pawnshop.txt";
 
         public DealWindow()
         {
@@ -56,7 +58,14 @@ namespace Pawnshop
 
             using (StreamReader stream = new StreamReader(pathCustomers, Encoding.GetEncoding(1251))){
                 string dataUsers = stream.ReadToEnd();
-                users = dataUsers.Split('/');
+                if (!string.IsNullOrEmpty(dataUsers))
+                {
+                    users = dataUsers.Split('/');
+                }
+                else
+                {
+                    CustomerEmpty = true;
+                }
                 
             }
             
@@ -117,7 +126,7 @@ namespace Pawnshop
         {
             bool Valid = CheckSelectedItem(ComboBoxCustomer.SelectedItem, ComboBoxCustomer) & CheckSelectedItem(ComboBoxCategory.SelectedItem, ComboBoxCategory) & CheckSelectedItem(ComboBoxProducer.SelectedItem, ComboBoxProducer) & CheckSelectedItem(ComboBoxModel.SelectedItem, ComboBoxModel) & CheckTextBox(PriceProduct.Text, 1, PriceProduct) & CheckSelectedItem(DateReturn.SelectedDate, DateReturn) & CheckYear(YearOfProduction.Text, 1, YearOfProduction);
 
-            if (Valid == true)
+            if (Valid == true && CheckCashRegister(PriceProduct.Text))
             {
                 string CustomerInfo = ComboBoxCustomer.SelectedItem.ToString();
                 string Category = ComboBoxCategory.SelectedItem.ToString();
@@ -128,7 +137,7 @@ namespace Pawnshop
                 var DateOfReturn = DateReturn.SelectedDate.Value.Date;
                 string Year = YearOfProduction.Text.ToString();
                 double InterestRate = CalculateInterestRate(Price);
-                double Comission = Math.Round(Convert.ToDouble((DateOfReturn - DateOfDeal).Days)*InterestRate*Price/100.0,2);
+                double Comission = Math.Round(Math.Ceiling((DateOfReturn - DateOfDeal).TotalDays)*InterestRate*Price/100.0,2);
                 double SumOfRefund = Price + Comission;
           
                 DealInfo newDealInfo = new DealInfo();
@@ -145,6 +154,7 @@ namespace Pawnshop
                 {
                     Close();
                     double numberProduct = findNumberOfProduct();
+                    ReCountCashRegister(Price.ToString());
                     using (StreamWriter stream = new StreamWriter(pathProducts, true, Encoding.GetEncoding(1251)))
                     {
                         stream.WriteLine($"{numberProduct}/{Category}/{Producer}/{Model}/{Year}/{Price}");
@@ -155,9 +165,10 @@ namespace Pawnshop
 
 
 
-                        // MessageBox.Show(ComboBoxCustomer.SelectedItem);
-                       // stream.WriteLine($"{CustomerInfo} {Category} {Producer} {Model} {Year} {DateOfDeal} {DateOfReturn} {Price} {InterestRate} {Comission} {SumOfRefund}");
+                        MessageBox.Show($"Сделка заключена.\nКлиент: {CustomerInfo}\nТовар: {Category} {Producer} {Model} {Year} года\nДата сделки: {DateOfDeal.ToString("d")}\nДата возврата: {DateOfReturn.ToString("d")}\nПроцент: {InterestRate} %\nКомиссия: {Comission} руб.\nСумма возврата: {SumOfRefund} руб.");
+                       stream.WriteLine($"{CustomerInfo}/{Category} {Producer} {Model}/{Year}/{DateOfDeal.ToString("d")}/{DateOfReturn.ToString("d")}/{Price}/{InterestRate}/{Comission}/{SumOfRefund}");
                     }
+                    
                     
                 }
             }
@@ -280,6 +291,51 @@ namespace Pawnshop
             }
 
             return interestRate;
+        }
+        private void CustomerOnDropDownOpened(object sender, EventArgs e)
+        {
+            if (ComboBoxCustomer.IsDropDownOpen == true && CustomerEmpty)
+            {
+                MessageBox.Show("Нет данных о клиентах. Добавьте нового клиента.");
+            }
+        }
+        private bool CheckCashRegister(string price)
+        {
+            bool result=true;
+            double cashRegister;
+            using (StreamReader stream = new StreamReader(pathPawnShop, Encoding.GetEncoding(1251)))
+            {
+                cashRegister = Convert.ToDouble(stream.ReadLine());
+
+
+            }
+            if (Convert.ToDouble(price) > Convert.ToDouble(cashRegister))
+            {
+                result = false;
+                MessageBox.Show($"К сожалению сделка невозможна. Текущее состояние кассы: {cashRegister} руб.");
+            }       
+            return result;
+        }
+        private void ReCountCashRegister(string price)
+        {
+            double cashRegister;
+            string data;
+            using (StreamReader stream = new StreamReader(pathPawnShop, Encoding.GetEncoding(1251)))
+            {
+
+                cashRegister = Convert.ToDouble(stream.ReadLine());
+                data = stream.ReadToEnd();
+
+
+            }
+            cashRegister = cashRegister - Convert.ToDouble(price);
+            using (StreamWriter stream = new StreamWriter(pathPawnShop, false, Encoding.GetEncoding(1251)))
+            {
+
+                stream.WriteLine(cashRegister);
+                stream.Write(data);
+
+            }
         }
     }
 }
