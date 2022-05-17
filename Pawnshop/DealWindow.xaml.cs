@@ -91,6 +91,33 @@ namespace Pawnshop
  
             
         }
+        private void ButtonClickEditCustomer(object sender, RoutedEventArgs e)
+        {
+            
+            //newCustomer.Show();
+            if (CheckSelectedItem(ComboBoxCustomer.SelectedItem, ComboBoxCustomer))
+            {
+                EditCustomer editCustomer = new EditCustomer();
+                
+                string[] customer = ComboBoxCustomer.SelectedItem.ToString().Split(' ');
+                    editCustomer.previousCustomer.FirstName = editCustomer.TextBoxFirstName.Text = customer[0];
+                editCustomer.previousCustomer.SecondName = editCustomer.TextBoxSecondName.Text = customer[1];
+                editCustomer.previousCustomer.Patronymic = editCustomer.TextBoxPatronymic.Text = customer[2];
+                editCustomer.previousCustomer.Passport = editCustomer.TextBoxPassport.Text = customer[3];
+                editCustomer.previousCustomer.PhoneNumber = editCustomer.TextBoxPhoneNumber.Text = customer[4];
+
+                if (editCustomer.ShowDialog() == true)
+                {
+                    Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Выберите клиента для редактирования");
+            }
+
+
+        }
         //допилю номкр договора
         private string findNumberOfDeal(object sender, RoutedEventArgs e)
         {

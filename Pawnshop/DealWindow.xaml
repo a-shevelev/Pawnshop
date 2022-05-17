@@ -21,11 +21,13 @@
                     <TextBlock Text="Информация о товаре" FontSize="20" Margin="3 3 3 6" FontFamily="GOST type B" HorizontalAlignment="Right" ></TextBlock>
                 </Grid>
                 <Grid Margin="3 3 3 6">
-                    <ComboBox Name="ComboBoxCustomer" materialDesign:HintAssist.Hint="Ф.И.О и паспортные данные клиента" HorizontalAlignment="Left"  FontSize="11" VerticalAlignment="Bottom"  Width="250" IsEnabled="True" IsReadOnly="True" IsEditable="True" Background="#00000000"  SelectionChanged="ComboBoxSelectionChanged" DropDownOpened="CustomerOnDropDownOpened"></ComboBox>
+                    <ComboBox Name="ComboBoxCustomer" materialDesign:HintAssist.Hint="Ф.И.О и паспортные данные клиента" HorizontalAlignment="Left"  FontSize="11" VerticalAlignment="Bottom"  Width="270" IsEnabled="True" IsReadOnly="True" IsEditable="True" Background="#00000000"  SelectionChanged="ComboBoxSelectionChanged" DropDownOpened="CustomerOnDropDownOpened"></ComboBox>
                     <ComboBox Name="ComboBoxCategory" materialDesign:HintAssist.Hint="Категория товара" HorizontalAlignment="Right"  VerticalAlignment="Bottom"  Width="150" IsEditable="True" IsReadOnly="True" SelectionChanged="ComboBoxCategorySelectionChanged" Background="#00000000"></ComboBox>
                 </Grid>
                 <Grid Margin="3 3 3 6">
-                    <Button HorizontalAlignment="Left" Height="30" Width="250" Content="Добавить нового клиента" FontSize="15" FontFamily="GOST type B" Style="{StaticResource MaterialDesignPaperLightButton}" Foreground="Black" BorderBrush="#FFB5BD1D" Cursor="Hand" Click="ButtonClickAddNewCustomer" />
+                    <Button  Height="30" Width="130" Content="Редактировать" FontSize="15" FontFamily="GOST type B" Style="{StaticResource MaterialDesignPaperLightButton}" Foreground="Black" BorderBrush="#FFB5BD1D" Cursor="Hand" Click="ButtonClickEditCustomer" Margin="140,0,224,0" />
+
+                    <Button HorizontalAlignment="Left" Height="30" Width="130" Content="Добавить" FontSize="15" FontFamily="GOST type B" Style="{StaticResource MaterialDesignPaperLightButton}" Foreground="Black" BorderBrush="#FFB5BD1D" Cursor="Hand" Click="ButtonClickAddNewCustomer" />
                     <ComboBox Name="ComboBoxProducer" materialDesign:HintAssist.Hint="Производитель" HorizontalAlignment="Right"  VerticalAlignment="Bottom"  Width="120"  IsEditable="True" IsReadOnly="True"  SelectionChanged="ComboBoxProducerSelectionChanged" Background="#00000000"></ComboBox>
                 </Grid>
                 <Grid Margin="3 3 3 6">

@@ -84,6 +84,9 @@
     <Compile Include="DealInfo.xaml.cs">
       <DependentUpon>DealInfo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EditCustomer.xaml.cs">
+      <DependentUpon>EditCustomer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Product.cs" />
     <Compile Include="ShowDeals.xaml.cs">
       <DependentUpon>ShowDeals.xaml</DependentUpon>
@@ -92,6 +95,10 @@
       <DependentUpon>ShowProducts.xaml</DependentUpon>
     </Compile>
     <Page Include="DealWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditCustomer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

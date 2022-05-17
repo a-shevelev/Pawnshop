@@ -12,12 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using System.IO;
 namespace Pawnshop
 {
 
     public partial class MainWindow : Window
     {
+        string pathDeals = @"../deals.txt";
+        string pathProducts = @"../products.txt";
         public MainWindow()
         {
             InitializeComponent();
@@ -32,15 +34,40 @@ namespace Pawnshop
 
         private void ButtonClickShowProducts(object sender, RoutedEventArgs e)
         {
+            
+            
            ShowProducts showProducts = new ShowProducts();
             showProducts.Show();
             Close();
         }
         private void ButtonClickShowDeals(object sender, RoutedEventArgs e)
         {
-            ShowDeals showDeals = new ShowDeals();
-            showDeals.Show();
-            Close();
+            if (!fileEmpty(pathDeals))
+            {
+                ShowDeals showDeals = new ShowDeals();
+
+                showDeals.Show();
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("");
+            }
+        }
+        private bool fileEmpty(string path)
+        {
+            bool fileEmpty = false;
+            using (StreamReader stream = new StreamReader(path, Encoding.GetEncoding(1251)))
+            {
+
+                string dataUsers = stream.ReadToEnd();
+                if (string.IsNullOrEmpty(dataUsers))
+                {
+                    fileEmpty = true;
+                }
+
+            }
+            return fileEmpty;
         }
     }
 }
