@@ -21,10 +21,10 @@ namespace Pawnshop
     /// </summary>
     public partial class NewCustomer : Window
     {
-        //public Customer customer { get; set; }
+        
         
         string pathCustomers = @"../users.txt";
-        int countDefis = 0;
+        
         public NewCustomer()
         {
             InitializeComponent();
@@ -85,7 +85,7 @@ namespace Pawnshop
                         MessageBox.Show("Клиент успешно добавлен");
                     }
                 }
-               // MessageBox.Show($"{customer.FirstName}\n{customer.SecondName}\n{customer.Patronymic}");
+               
                 DealWindow dealWindow = new DealWindow();
                 dealWindow.Show();
                 this.DialogResult = true;
@@ -120,11 +120,7 @@ namespace Pawnshop
                 return true;
             if (c >= 'а' && c <= 'я')
                 return true;
-            if (c == '-' && countDefis == 0)
-            {
-                countDefis++;
-                return true;
-            }
+            
             return false;
         }
         private void MarkInvalid(Control control)
@@ -134,8 +130,7 @@ namespace Pawnshop
         }
         private void MarkValid(Control control)
         {
-            control.BorderBrush = Brushes.Gray;
-            //DialogResult = null;
+            control.BorderBrush = Brushes.Gray;  
         }
         private bool CheckTextBox(string text, int count, Control control)
         {

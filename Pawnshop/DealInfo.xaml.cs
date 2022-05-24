@@ -24,12 +24,7 @@ namespace Pawnshop
         {
          
             
-            InitializeComponent();
-            /* void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-            {
-                text.Customerr = ComboBoxCustomer.SelectedItem.ToString();
-            }*/
-           
+            InitializeComponent();       
         }
         private void ButtonClickEditDeal(object sender, RoutedEventArgs e)
         {

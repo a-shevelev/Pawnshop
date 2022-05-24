@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pawnshop"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" WindowStartupLocation="CenterScreen" Width="600">
+        Title="Ломбард" Height="600" WindowStartupLocation="CenterScreen" Width="600">
     <Grid Background="#D0F0C0">
         
         <Border MinWidth="300" Margin="10" Background="AliceBlue" VerticalAlignment="Center" MaxWidth="550" Padding="25" CornerRadius="17" >

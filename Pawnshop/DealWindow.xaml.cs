@@ -37,23 +37,76 @@ namespace Pawnshop
         public DealWindow()
         {
             InitializeComponent();
-            categories = new string[] { "Часы", "Кольца", "Серьги" };
+            categories = new string[] { "Браслет", "Кольцо", "Кулон", "Серьги", "Часы", "Цепь"};
             producers = new string[][] {
-                new string []{ "Rolex", "Casio", "GIOGIO Armani" },
-                new string[] { "Cartier", "SOKOLOV" },
-                new string[] { "Klava Coca Collection"} };
+                new string []{ "-","Cartier", "Chopard", "Harry Winston", "Pandora", "SOKOLOV","Tiffany & Co", "Van Cleef & Arpels" },
+                new string []{ "-","Cartier", "Chopard", "Harry Winston", "Pandora", "SOKOLOV","Tiffany & Co", "Van Cleef & Arpels" },
+                new string []{ "-","Cartier", "Chopard", "Harry Winston", "Pandora", "SOKOLOV","Tiffany & Co", "Van Cleef & Arpels" },
+                new string []{ "-","Cartier", "Chopard", "Harry Winston", "Pandora", "SOKOLOV","Tiffany & Co", "Van Cleef & Arpels" },
+                new string []{ "-",  "Cartier", "Casio","Rolex","Seiko","Ника"},
+                new string []{ "-","Cartier", "Chopard", "Harry Winston", "Pandora", "SOKOLOV","Tiffany & Co", "Van Cleef & Arpels" },
+                };
             models = new string[][][] {
                 new string[][] {
-                    new string[] { "Air King", "Explorer" },
-                    new string[] { "G-SHOCK", "EDIFICE" },
-                     new string[] { "AR11272", "AR11274" },
+                    new string[] { "-" },
+                    new string[] { "-", "Ballerine", "d'Amour", "Maillon Panthère", "Trinity", "Trinity Ruban" },
+                    new string[] { "-", "Ballerine", "d'Amour", "Maillon Panthère", "Trinity", "Trinity Ruban" },
+                    new string[] { "-", "Ballerine", "d'Amour", "Maillon Panthère", "Trinity", "Trinity Ruban" },
+                    new string[] { "-", "Angel", "Heart", "Love" },
+                    new string[] { "-", "Золото 585", "Серебро 555" },
+                    new string[] { "-", "Ballerine", "d'Amour", "Maillon Panthère", "Trinity", "Trinity Ruban" },
+                    new string[] { "-", "Ballerine", "d'Amour", "Maillon Panthère", "Trinity", "Trinity Ruban" }
+                },
+                
+                new string[][] {
+                    new string[] { "-" },
+                    new string[] { "-", "Ballerine", "d'Amour", "Maillon Panthère", "Trinity", "Trinity Ruban" },
+                    new string[] { "-", "Ballerine", "d'Amour", "Maillon Panthère", "Trinity", "Trinity Ruban" },
+                    new string[] { "-", "Ballerine", "d'Amour", "Maillon Panthère", "Trinity", "Trinity Ruban" },
+                    new string[] { "-", "Angel", "Heart", "Love" },
+                    new string[] { "-", "Золото 585", "Серебро 555" },
+                    new string[] { "-", "Ballerine", "d'Amour", "Maillon Panthère", "Trinity", "Trinity Ruban" },
+                    new string[] { "-", "Ballerine", "d'Amour", "Maillon Panthère", "Trinity", "Trinity Ruban" }
                 },
                 new string[][] {
-                    new string[] { "Золото 585", "Серебро 925" },
-                    new string[] { "Золото 777", "Серебро 555" }
+                    new string[] { "-" },
+                    new string[] { "-", "Ballerine", "d'Amour", "Maillon Panthère", "Trinity", "Trinity Ruban" },
+                    new string[] { "-", "Ballerine", "d'Amour", "Maillon Panthère", "Trinity", "Trinity Ruban" },
+                    new string[] { "-", "Ballerine", "d'Amour", "Maillon Panthère", "Trinity", "Trinity Ruban" },
+                    new string[] { "-", "Angel", "Heart", "Love" },
+                    new string[] { "-", "Золото 585", "Серебро 555" },
+                    new string[] { "-", "Ballerine", "d'Amour", "Maillon Panthère", "Trinity", "Trinity Ruban" },
+                    new string[] { "-", "Ballerine", "d'Amour", "Maillon Panthère", "Trinity", "Trinity Ruban" }
                 },
-                new string[][] { new string [] { "Краш", "Зая" }
+                new string[][] {
+                    new string[] { "-" },
+                    new string[] { "-", "Ballerine", "d'Amour", "Maillon Panthère", "Trinity", "Trinity Ruban" },
+                    new string[] { "-", "Ballerine", "d'Amour", "Maillon Panthère", "Trinity", "Trinity Ruban" },
+                    new string[] { "-", "Ballerine", "d'Amour", "Maillon Panthère", "Trinity", "Trinity Ruban" },
+                    new string[] { "-", "Angel", "Heart", "Love" },
+                    new string[] { "-", "Золото 585", "Серебро 555" },
+                    new string[] { "-", "Ballerine", "d'Amour", "Maillon Panthère", "Trinity", "Trinity Ruban" },
+                    new string[] { "-", "Ballerine", "d'Amour", "Maillon Panthère", "Trinity", "Trinity Ruban" }
+                },
+                new string[][] {
+                    new string[] { "-" },
+                    new string[] { "-", "Ballon Bleu", "Crash", "Ronde Louis" , "Ronde Must","Ronde Solo" ,"Santos-Dumont" },
+                    new string[] { "-", "BABY-G", "Edifice", "G-SHOCK" , "PROTREK", "Sheen" ,"Vintage" },
+                    new string[] { "-", "Air-King", "Datejust", "Explorer", "Oyster Perpetual", "Sheen" ,"Vintage" },
+                    new string[] { "-", "Alpinist", "Astron", "Lord Marvel", "Tuna" },
+                    new string[] { "-", "Celebrity", "EGO", "Gentleman" }
+                },
+                new string[][] {
+                    new string[] { "-" },
+                    new string[] { "-", "Ballerine", "d'Amour", "Maillon Panthère", "Trinity", "Trinity Ruban" },
+                    new string[] { "-", "Ballerine", "d'Amour", "Maillon Panthère", "Trinity", "Trinity Ruban" },
+                    new string[] { "-", "Ballerine", "d'Amour", "Maillon Panthère", "Trinity", "Trinity Ruban" },
+                    new string[] { "-", "Angel", "Heart", "Love" },
+                    new string[] { "-", "Золото 585", "Серебро 555" },
+                    new string[] { "-", "Ballerine", "d'Amour", "Maillon Panthère", "Trinity", "Trinity Ruban" },
+                    new string[] { "-", "Ballerine", "d'Amour", "Maillon Panthère", "Trinity", "Trinity Ruban" }
                 }
+
             };
 
             using (StreamReader stream = new StreamReader(pathCustomers, Encoding.GetEncoding(1251))){
@@ -83,7 +136,6 @@ namespace Pawnshop
         private void ButtonClickAddNewCustomer(object sender, RoutedEventArgs e)
         {
             NewCustomer newCustomer = new NewCustomer();
-            //newCustomer.Show();
             if (newCustomer.ShowDialog() == true)
             {
                 Close();
@@ -94,7 +146,7 @@ namespace Pawnshop
         private void ButtonClickEditCustomer(object sender, RoutedEventArgs e)
         {
             
-            //newCustomer.Show();
+            
             if (CheckSelectedItem(ComboBoxCustomer.SelectedItem, ComboBoxCustomer))
             {
                 EditCustomer editCustomer = new EditCustomer();
@@ -118,19 +170,6 @@ namespace Pawnshop
 
 
         }
-        //допилю номкр договора
-        private string findNumberOfDeal(object sender, RoutedEventArgs e)
-        {
-            string result = "dxfjkn";
-            using (StreamReader stream = new StreamReader(pathDeals, Encoding.GetEncoding(1251)))
-            {
-
-                string dataUsers = stream.ReadToEnd();
-                users = dataUsers.Split('/');
-                
-            }
-            return result;
-        }
         private double findNumberOfProduct()
         {
             double result = 1;
@@ -142,9 +181,6 @@ namespace Pawnshop
                     productInfo = stream.ReadLine();
                     result++;
                 }
-               // string dataProducts= stream.ReadToEnd();
-               // string [] productInfo = dataProducts.Split('/');
-
             }
             return result;
         }
@@ -188,12 +224,8 @@ namespace Pawnshop
                     }
                     using (StreamWriter stream = new StreamWriter(pathDeals, true, Encoding.GetEncoding(1251)))
                     {
-                        //MessageBox.Show(ComboBoxCustomer.SelectedItem.ToString());
-
-
-
                         MessageBox.Show($"Сделка заключена.\nКлиент: {CustomerInfo}\nТовар: {Category} {Producer} {Model} {Year} года\nДата сделки: {DateOfDeal.ToString("d")}\nДата возврата: {DateOfReturn.ToString("d")}\nПроцент: {InterestRate} %\nКомиссия: {Comission} руб.\nСумма возврата: {SumOfRefund} руб.");
-                       stream.WriteLine($"{CustomerInfo}/{Category} {Producer} {Model}/{Year}/{DateOfDeal.ToString("d")}/{DateOfReturn.ToString("d")}/{Price}/{InterestRate}/{Comission}/{SumOfRefund}");
+                        stream.WriteLine($"{CustomerInfo}/{Category} {Producer} {Model}/{Year}/{DateOfDeal.ToString("d")}/{DateOfReturn.ToString("d")}/{Price}/{InterestRate}/{Comission}/{SumOfRefund}");
                     }
                     
                     

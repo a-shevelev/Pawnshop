@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pawnshop"
         mc:Ignorable="d"
-        Title="ShowProducts" WindowStartupLocation="CenterScreen" Height="600" Width="850">
+        Title="Ломбард" WindowStartupLocation="CenterScreen" Height="600" Width="850">
     <Grid Background="#D0F0C0" >
         <Border MinWidth="300" Margin="10" Background="AliceBlue" VerticalAlignment="Center" MaxWidth="700" Padding="25" CornerRadius="17" >
             <Border.Effect>

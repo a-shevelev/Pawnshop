@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pawnshop"
         mc:Ignorable="d"
-        Title="ShowDeals" WindowStartupLocation="CenterScreen" Height="500" Width="1400">
+        Title="Ломбард" WindowStartupLocation="CenterScreen" Height="600" Width="1400">
     <Grid Background="#D0F0C0" >
         <Border MinWidth="300" Margin="10" Background="AliceBlue" VerticalAlignment="Center" MaxWidth="1300" Padding="25" CornerRadius="17" >
             <Border.Effect>
@@ -19,8 +19,8 @@
                 <Grid Margin="5 5 5 5"  >
 
 
-                    <DataGrid Name="Wares" AutoGenerateColumns="False" MaxWidth="1300" MinWidth="400" MaxHeight="350" IsReadOnly="True">
-                        <DataGrid.Columns>
+                    <DataGrid Name="Wares" AutoGenerateColumns="False" MaxWidth="1300" MinWidth="400" MaxHeight="350" IsReadOnly="True" >
+                        <DataGrid.Columns >
                             <DataGridTextColumn Header="Данные клиента"  Binding="{Binding CustomerInfo}"/>
                             <DataGridTextColumn Header="Товар" Binding="{Binding Product}" />
                             

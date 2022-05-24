@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Pawnshop"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" d:DataContext="{d:DesignInstance Type=local:Customer}"
-        Title="NewCustomer" Height="450" Width="400">
+        Title="Ломбард" Height="450" Width="400">
     <Grid Background="#D0F0C0" >
         <Border MinWidth="300" Margin="10" Background="AliceBlue" VerticalAlignment="Center" MaxWidth="550" Padding="25" CornerRadius="17" Cursor="IBeam" >
             <Border.Effect>

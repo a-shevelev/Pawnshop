@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Pawnshop"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
-        Title="DealWindow" WindowStartupLocation="CenterScreen" Height="600" Width="600">
+        Title="Ломбард" WindowStartupLocation="CenterScreen" Height="600" Width="600">
     <Grid Background="#D0F0C0" >
         <Border MinWidth="300" Margin="10" Background="AliceBlue" VerticalAlignment="Center" MaxWidth="550" Padding="25" CornerRadius="17" Cursor="IBeam" >
             <Border.Effect>
@@ -22,17 +22,17 @@
                 </Grid>
                 <Grid Margin="3 3 3 6">
                     <ComboBox Name="ComboBoxCustomer" materialDesign:HintAssist.Hint="Ф.И.О и паспортные данные клиента" HorizontalAlignment="Left"  FontSize="11" VerticalAlignment="Bottom"  Width="270" IsEnabled="True" IsReadOnly="True" IsEditable="True" Background="#00000000"  SelectionChanged="ComboBoxSelectionChanged" DropDownOpened="CustomerOnDropDownOpened"></ComboBox>
-                    <ComboBox Name="ComboBoxCategory" materialDesign:HintAssist.Hint="Категория товара" HorizontalAlignment="Right"  VerticalAlignment="Bottom"  Width="150" IsEditable="True" IsReadOnly="True" SelectionChanged="ComboBoxCategorySelectionChanged" Background="#00000000"></ComboBox>
+                    <ComboBox Name="ComboBoxCategory" MaxDropDownHeight="130" materialDesign:HintAssist.Hint="Категория товара" HorizontalAlignment="Right"  VerticalAlignment="Bottom"  Width="150" IsEditable="True" IsReadOnly="True" SelectionChanged="ComboBoxCategorySelectionChanged" Background="#00000000"></ComboBox>
                 </Grid>
                 <Grid Margin="3 3 3 6">
                     <Button  Height="30" Width="130" Content="Редактировать" FontSize="15" FontFamily="GOST type B" Style="{StaticResource MaterialDesignPaperLightButton}" Foreground="Black" BorderBrush="#FFB5BD1D" Cursor="Hand" Click="ButtonClickEditCustomer" Margin="140,0,224,0" />
 
                     <Button HorizontalAlignment="Left" Height="30" Width="130" Content="Добавить" FontSize="15" FontFamily="GOST type B" Style="{StaticResource MaterialDesignPaperLightButton}" Foreground="Black" BorderBrush="#FFB5BD1D" Cursor="Hand" Click="ButtonClickAddNewCustomer" />
-                    <ComboBox Name="ComboBoxProducer" materialDesign:HintAssist.Hint="Производитель" HorizontalAlignment="Right"  VerticalAlignment="Bottom"  Width="120"  IsEditable="True" IsReadOnly="True"  SelectionChanged="ComboBoxProducerSelectionChanged" Background="#00000000"></ComboBox>
+                    <ComboBox Name="ComboBoxProducer" MaxDropDownHeight="130" materialDesign:HintAssist.Hint="Производитель" HorizontalAlignment="Right"  VerticalAlignment="Bottom"  Width="120"  IsEditable="True" IsReadOnly="True"  SelectionChanged="ComboBoxProducerSelectionChanged" Background="#00000000"></ComboBox>
                 </Grid>
                 <Grid Margin="3 3 3 6">
                     <DatePicker Name="Date1" materialDesign:HintAssist.Hint="Дата сделки"  Style="{StaticResource MaterialDesignFloatingHintDatePicker}" materialDesign:HintAssist.Foreground="Black" HorizontalAlignment="Left" Width="150" />
-                    <ComboBox Name="ComboBoxModel" materialDesign:HintAssist.Hint="Модель" SelectionChanged="ComboBoxSelectionChanged" HorizontalAlignment="Right"  VerticalAlignment="Bottom"  Width="120"  IsEditable="True" IsReadOnly="True" Background="#00000000"></ComboBox>
+                    <ComboBox Name="ComboBoxModel" MaxDropDownHeight="130" materialDesign:HintAssist.Hint="Модель" SelectionChanged="ComboBoxSelectionChanged" HorizontalAlignment="Right"  VerticalAlignment="Bottom"  Width="120"  IsEditable="True" IsReadOnly="True" Background="#00000000"></ComboBox>
                 </Grid>
                 <Grid Margin="3 3 3 6">
                     <DatePicker Name="DateReturn" materialDesign:HintAssist.Hint="Дата возврата" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" materialDesign:HintAssist.Foreground="Black" HorizontalAlignment="Left" Width="150" SelectedDateChanged="DateSelectionChanged"/>
